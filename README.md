@@ -15,3 +15,5 @@ YDD is youtube donwload link extractor api built on top of youtube-dl.
 
 ### WORK TO BE DONE ⚒️
 - add a logger
+
+#### The application is currently live at `youtubedirectdownload.pythonanywhere.com`
