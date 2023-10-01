@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request, abort
-from youtube_direct_download.utils import LinkExtract
+from utils import LinkExtract
 
 youtube_download = Blueprint("youtube_download", __name__)
 
