@@ -1,15 +1,16 @@
 from flask import Flask
 
-def create_app(config_filename="config.py"):
-    app = Flask(__name__)
-    app.config.from_pyfile(config_filename)
+app = Flask(__name__)
 
-    from youtube_direct_download.api_index import api_index
-    app.register_blueprint(api_index)
+from api_index import api_index
+app.register_blueprint(api_index)
 
-    from youtube_direct_download.youtube_download import youtube_download
-    app.register_blueprint(youtube_download)
+from youtube_download import youtube_download
+app.register_blueprint(youtube_download)
 
-    return app
+
+@app.route("/health_check", methods=["GET"])
+def health_check():
+    return "Service is up and running"
 
 
